@@ -327,10 +327,6 @@ public class MainActivity extends AppCompatActivity {
                     number=Double.toString(sqrt(number1));
                     outputView.setText(number);
                 }
-                if (operation.equals("←"))
-                {
-
-                }
             }
         });
         button0.setOnClickListener(new View.OnClickListener(){

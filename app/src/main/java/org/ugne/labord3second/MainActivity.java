@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static java.lang.Math.sqrt;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView outputView;
@@ -85,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+                operand1=number;
+                number="";
+                operation="/";
+                outputView.setText(operand1+operation);
             }
         });
         buttonMR.setOnClickListener(new View.OnClickListener(){
@@ -114,13 +121,16 @@ public class MainActivity extends AppCompatActivity {
         buttonLeft.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operation="←";
+                number=number.substring (0,number.length()-1);
+                outputView.setText(number);
             }
         });
         buttonCE.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                number="";
+                outputView.setText("0");
             }
         });
         buttonC.setOnClickListener(new View.OnClickListener(){
@@ -133,13 +143,18 @@ public class MainActivity extends AppCompatActivity {
         buttonPlusMinus.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operand1=number;
+                number="";
+                operation="+-";
             }
         });
         buttonSquare.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operand1=number;
+                number="";
+                operation="√";
+                outputView.setText(operation+operand1);
             }
         });
         button7.setOnClickListener(new View.OnClickListener(){
@@ -166,7 +181,10 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operand1=number;
+                number="";
+                operation="/";
+                outputView.setText(operand1+operation);
             }
         });
         buttonProc.setOnClickListener(new View.OnClickListener(){
@@ -199,13 +217,19 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operand1=number;
+                number="";
+                operation="*";
+                outputView.setText(operand1+operation);
             }
         });
         button1x.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                operand1=number;
+                number="";
+                operation="1x";
+                outputView.setText(operand1+operation);
             }
         });
         button1.setOnClickListener(new View.OnClickListener(){
@@ -256,6 +280,56 @@ public class MainActivity extends AppCompatActivity {
                     number2=Double.parseDouble(number);
                     number=Double.toString(number1-number2);
                     outputView.setText(number);
+                }
+                if (operation.equals("/"))
+                {
+                    double number1, number2;
+                    number1=Double.parseDouble(operand1);
+                    number2=Double.parseDouble(number);
+                    if (number1==0)
+                    {
+                        Context context = getApplicationContext();
+                        CharSequence text = "You cannot divide 0!";
+                        int duration = Toast.LENGTH_LONG;
+
+                        Toast toast = Toast.makeText(context, text, duration);
+                        toast.show();
+                    }
+                    number=Double.toString(number1/number2);
+                    outputView.setText(number);
+                }
+                if (operation.equals("*"))
+                {
+                    double number1, number2;
+                    number1=Double.parseDouble(operand1);
+                    number2=Double.parseDouble(number);
+                    number=Double.toString(number1*number2);
+                    outputView.setText(number);
+                }
+                if (operation.equals("1x"))
+                {
+                    double number1, number2=1;
+                    number1 = Double.parseDouble(operand1);
+                    number=Double.toString(number2/number1);
+                    outputView.setText(number);
+                }
+                if (operation.equals("+-"))
+                {
+                    double number1, number2=0;
+                    number1 = Double.parseDouble(operand1);
+                    number=Double.toString(number2-number1);
+                    outputView.setText(number);
+                }
+                if (operation.equals("√"))
+                {
+                    double number1;
+                    number1=Double.parseDouble(operand1);
+                    number=Double.toString(sqrt(number1));
+                    outputView.setText(number);
+                }
+                if (operation.equals("←"))
+                {
+
                 }
             }
         });

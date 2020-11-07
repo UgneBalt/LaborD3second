@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">LaborD3second</string>
+    <string name="buttonMC">MC</string>
+    <string name="buttonMR">MR</string>
+    <string name="buttonMS">MS</string>
+    <string name="buttonMplus">M+</string>
+    <string name="buttonMminus">M-</string>
+
+    <string name="buttonPlus">+</string>
+    <string name="buttonMinus">-</string>
+    <string name="buttonDivide">/</string>
+    <string name="buttonMultiply">*</string>
+    <string name="buttonSquare">&#8730;</string>
+    <string name="buttonEqual">=</string>
+
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="button0">0</string>
+
+    <string name="buttonLeft">&#x2190;</string>
+    <string name="buttonCE">CE</string>
+    <string name="buttonC">C</string>
+    <string name="buttonPlusMinus">&#xb1;&#177;</string>
+    <string name="buttonProc">%</string>
+    <string name="button1x">1/x</string>
+    <string name="buttonSpot">.</string>
+
+</resources>
